@@ -3,39 +3,40 @@ import Card from "../components/Card";
 import Chart from "../components/Chart";
 import BudgetChart from "../components/BudgetChart";
 import TeamMood from "../components/TeamMood";
-import BottomCards from "../components/BottomCards"; // Import bottom cards
+import BottomCards from "../components/BottomCards";
 import { FiCheckCircle, FiRefreshCw, FiAlertTriangle, FiUsers } from "react-icons/fi";
 
 const Dashboard = () => {
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-gray-100 min-h-screen flex flex-col">
             {/* Navbar */}
             <Navbar />
 
-            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Left & Center Section */}
-                <div className="md:col-span-2 space-y-6">
+            {/* Main Dashboard Content */}
+            <div className="flex flex-col lg:flex-row flex-grow p-6 gap-6">
+                {/* Left & Center Section - Expands Fully */}
+                <div className="flex-1 space-y-6">
                     {/* Top Cards */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                         <Card title="Total Projects" value="5" icon={FiCheckCircle} />
                         <Card title="Completed" value="1" icon={FiCheckCircle} />
                         <Card title="Ongoing" value="3" icon={FiRefreshCw} />
-                        <Card title="Delayed" value="1" icon={FiAlertTriangle} bgColor="bg-red-100" textColor="text-red-500" />
+                        <Card title="Delayed" value="1" icon={FiAlertTriangle} bgColor="bg-red-400" textColor="text-white" />
                         <Card title="Employees" value="10" icon={FiUsers} />
                     </div>
 
-                    {/* Charts Section */}
+                    {/* Charts Section - Expands Responsively */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <Chart />
                         <BudgetChart />
                     </div>
 
-                    {/* Bottom Cards */}
+                    {/* Bottom Cards - Expands Fully */}
                     <BottomCards />
                 </div>
 
-                {/* Right Sidebar (Team Mood) */}
-                <div className="md:col-span-1">
+                {/* Right Sidebar - Team Mood (Moves Below on Small Screens) */}
+                <div className="w-full md:max-w-xs lg:w-72">
                     <TeamMood />
                 </div>
             </div>
