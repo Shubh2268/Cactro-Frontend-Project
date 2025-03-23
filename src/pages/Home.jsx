@@ -11,7 +11,7 @@ const Home = () => {
             <NotificationBar />
 
             {/* Hero Section */}
-            <section className="max-w-7xl mx-auto px-6 py-20 md:mt-5 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-14">
+            <section className="max-w-7xl mx-auto px-6 py-20 md:mt-20 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-14">
                 {/* Left Side - Text & Buttons */}
                 <div className="max-w-lg text-center md:text-left">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
